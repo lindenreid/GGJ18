@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class Loop : MonoBehaviour {
 
-    public Vector3 resetPos;
     public float startSpeed = 1.0f;
     public float dec = 0.1f;
-    public Vector3 startPos;
+    public Vector3 loopPos;
     public float maxPosX;
-    public float endPosX;
 
     private float speed;
     private bool slowing;
@@ -28,7 +26,7 @@ public class Loop : MonoBehaviour {
         
         if(!slowing && transform.position.x >= maxPosX)
         {
-            transform.position = startPos;
+            transform.position = new Vector3(loopPos.x, transform.position.y, 0);
         }
     }
 
@@ -39,6 +37,5 @@ public class Loop : MonoBehaviour {
     public void Reset() {
         speed = startSpeed;
         slowing = false;
-        transform.position = resetPos;
     }
 }
