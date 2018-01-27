@@ -111,8 +111,7 @@ public class GameController : MonoBehaviour {
 		}
 
 		// create remaining random colors
-		numStars -= n;
-		for (int i = 0; i < numStars; i++)
+		for (int i = 0; i < numStars - n; i++)
 		{
 			color = new Color(Random.value, Random.value, Random.value);
 			CreateStar(color);
