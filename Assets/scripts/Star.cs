@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEditor.Animations;
 using System.Collections.Generic;
 
 public class Star : MonoBehaviour {
 
 	public GameController GameController;
 	public Color color = new Color(1,1,1,1);
-	public List<Sprite> Sprites;
+	public List<AnimatorController> animations;
 
 	public class Connection {
 		public Star next;
@@ -21,8 +22,12 @@ public class Star : MonoBehaviour {
 	{
 		connections = new List<Connection>();
 
-		int n = (int)Mathf.Floor(Random.Range(1, Sprites.Count));
-		GetComponent<SpriteRenderer>().sprite = Sprites[n];
+		int n = (int)Mathf.Floor(Random.Range(1, animations.Count));
+		Animator anim = GetComponent<Animator>();
+		anim.runtimeAnimatorController = animations[n];
+		AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo(0);
+		anim.Play(state.fullPathHash, -1, Random.value);
+		//anim.speed *= Random.value;
 	}
 
 	public void SetColor (Color c)

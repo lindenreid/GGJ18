@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114995728748727012}
   - component: {fileID: 61549378154491842}
   - component: {fileID: 114380150349248248}
+  - component: {fileID: 95227152650354278}
   m_Layer: 0
   m_Name: light
   m_TagString: Untagged
@@ -68,6 +69,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.67, y: 0.64}
   m_EdgeRadius: 0
+--- !u!95 &95227152650354278
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1035117537523794}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8fcd301a157c31147baaf8ae2898d225, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114380150349248248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimSpeed: 2.5
   AnimAmp: 0.01
+  randomSpeed: 1
 --- !u!114 &114995728748727012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,10 +113,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameController: {fileID: 0}
   color: {r: 1, g: 1, b: 1, a: 1}
-  Sprites:
-  - {fileID: 21300000, guid: 1d3c7ecb1b436514c87daaf3c6ce0d80, type: 3}
-  - {fileID: 21300000, guid: d6ad1cf5ddf2f334e9bc5b4200e7659c, type: 3}
-  - {fileID: 21300000, guid: 92fcb81ac35bda94388fb83b4f794593, type: 3}
+  animations:
+  - {fileID: 9100000, guid: 8fcd301a157c31147baaf8ae2898d225, type: 2}
+  - {fileID: 9100000, guid: d11bf41385c663548a4932016b7cfdfb, type: 2}
+  - {fileID: 9100000, guid: 21cb0096a06fb3a42a47f5d0a9615505, type: 2}
   selected: 0
 --- !u!212 &212372607798538130
 SpriteRenderer:
