@@ -33,6 +33,9 @@ public class GameController : MonoBehaviour {
 	public List<Loop> loopers;
 	public Boat boat;
 
+	// UI references
+	public GameObject PauseMenu;
+
 	// constellation stuff
 	private List<Star> starGraph;
 	private Star lastClickedStar;
@@ -56,6 +59,10 @@ public class GameController : MonoBehaviour {
 		{
 			ClearGame();
 			StartGame();
+		}
+		else if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			Pause();
 		}
 	}
 
@@ -104,12 +111,12 @@ public class GameController : MonoBehaviour {
 		}
 
 		// create remaining random colors
-		/*numStars -= n;
+		numStars -= n;
 		for (int i = 0; i < numStars; i++)
 		{
 			color = new Color(Random.value, Random.value, Random.value);
 			CreateStar(color);
-		}*/
+		}
 
 		gameplay = true;
 	}
@@ -125,6 +132,22 @@ public class GameController : MonoBehaviour {
 		star.GameController = this;
 		star.SetColor(color);
 		allStars.Add(star);
+	}
+
+	public void Pause ()
+	{
+		if (gameplay)
+		{
+			gameplay = false;
+			Time.timeScale = 0;
+			PauseMenu.SetActive(true);
+		}
+		else
+		{
+			gameplay = true;
+			Time.timeScale = 1;
+			PauseMenu.SetActive(false);
+		}
 	}
 
 	public void AddStar (Star star)
