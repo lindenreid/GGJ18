@@ -5,6 +5,7 @@ public class Star : MonoBehaviour {
 
 	public GameController GameController;
 	public Color color = new Color(1,1,1,1);
+	public List<Sprite> Sprites;
 
 	public class Connection {
 		public Star next;
@@ -16,9 +17,12 @@ public class Star : MonoBehaviour {
 
 	public bool selected = false;
 
-	void Start()
+	void Start ()
 	{
 		connections = new List<Connection>();
+
+		int n = (int)Mathf.Floor(Random.Range(1, Sprites.Count));
+		GetComponent<SpriteRenderer>().sprite = Sprites[n];
 	}
 
 	public void SetColor (Color c)
