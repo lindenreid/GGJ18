@@ -18,6 +18,9 @@ public class GameController : MonoBehaviour {
 	public Vector3 smallStarSize = new Vector3(1.0f, 1.0f, 1.0f);
 	public Vector3 largeStarSize = new Vector3(1.5f, 1.5f, 1.5f);
 	public Vector3 dockStart;
+	public float dockFinish;
+	public int minColors = 2;
+	public int maxColors = 5;
 
 	// prefabs
 	public GameObject dockPrefab;
@@ -37,6 +40,9 @@ public class GameController : MonoBehaviour {
 	// stuff to be cleaned up at reset
 	private List<Star> allStars;
 	public GameObject dock;
+
+	// pause
+	public bool gameplay;
 
 	void Start ()
 	{
@@ -83,23 +89,48 @@ public class GameController : MonoBehaviour {
 		goalColor = color;
 		soul.material.SetColor("_Color", goalColor);
 
-		// create star selection
+		// break up answer into n colors that add up to answer
+		int n = (int)Mathf.Floor(Random.Range(minColors, maxColors + 1));
+		if (n % 2 != 0) n += 1;
+		float[] r = MathUtil.GenerateNumsThatAverageToVal(n, goalColor.r, 0, 1);
+		float[] g = MathUtil.GenerateNumsThatAverageToVal(n, goalColor.g, 0, 1);
+		float[] b = MathUtil.GenerateNumsThatAverageToVal(n, goalColor.b, 0, 1);
+
+		// create 'answer' colors
+		for (int i = 0; i < n; i++)
+		{
+			color = new Color(r[i], g[i], b[i]);
+			CreateStar(color);
+		}
+
+		// create remaining random colors
+		/*numStars -= n;
 		for (int i = 0; i < numStars; i++)
 		{
 			color = new Color(Random.value, Random.value, Random.value);
-			float x = Random.Range(minStarLoc.x, maxStarLoc.x);
-			float y = Random.Range(minStarLoc.y, maxStarLoc.y);
-			
-			GameObject starObj = Instantiate(starPrefab, new Vector3(x, y, 0), Quaternion.identity);
-			Star star = starObj.GetComponent<Star>();
-			star.GameController = this;
-			star.SetColor(color);
-			allStars.Add(star);
-		}
+			CreateStar(color);
+		}*/
+
+		gameplay = true;
+	}
+
+	private void CreateStar (Color color)
+	{
+		float x = Random.Range(minStarLoc.x, maxStarLoc.x);
+		float y = Random.Range(minStarLoc.y, maxStarLoc.y);
+
+		GameObject starObj = Instantiate(starPrefab, new Vector3(x, y, 0), Quaternion.identity);
+		Star star = starObj.GetComponent<Star>();
+
+		star.GameController = this;
+		star.SetColor(color);
+		allStars.Add(star);
 	}
 
 	public void AddStar (Star star)
 	{
+		if (!gameplay) return;
+
 		// TEMP: just set size to large to show selected
 		star.SetSelected(true, largeStarSize);
 
@@ -125,6 +156,8 @@ public class GameController : MonoBehaviour {
 
 	public void RemoveStar (Star star)
 	{
+		if (!gameplay) return;
+
 		// TEMP: just set size to large to show selected
 		star.SetSelected(false, smallStarSize);
 
@@ -134,8 +167,18 @@ public class GameController : MonoBehaviour {
 		CheckColor();
 	}
 
+	public void DeckAnimFinished ()
+	{
+		foreach (Loop looper in loopers)
+		{
+			looper.Stop();
+		}
+	}
+
 	private void CheckColor ()
 	{
+		if (!gameplay) return;
+
 		Vector3 diff = new Vector3(
 			Mathf.Abs(lamp.color.r - goalColor.r),
 			Mathf.Abs(lamp.color.g - goalColor.g),
@@ -149,11 +192,8 @@ public class GameController : MonoBehaviour {
 	private void ColorSuccess ()
 	{
 		dock = Instantiate(dockPrefab, dockStart, Quaternion.identity) as GameObject;
-
-		foreach (Loop loop in loopers)
-			loop.Slow();
-
-		boat.Move();
+		dock.GetComponent<Scroll>().Move(this, dockFinish);
+		gameplay = false;
 	}
 
 }
