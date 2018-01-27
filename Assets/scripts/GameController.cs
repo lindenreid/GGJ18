@@ -9,29 +9,93 @@ public class GameController : MonoBehaviour {
 	//                    a connectedion to removedStar
 	//                    and remove those connections
 
-	public Lamp lamp;
-	public Renderer soul;
+	// tuning
 	public float winMargin;
 	private Color goalColor;
-	public List<Loop> loopers;
-
-	public Boat boat;
-	public GameObject dockPrefab;
-	public Vector3 dockStart;
-
-	public GameObject connectionPrefab;
-	public GameObject starPrefab;
+	public int numStars;
+	public Vector3 maxStarLoc;
+	public Vector3 minStarLoc;
 	public Vector3 smallStarSize = new Vector3(1.0f, 1.0f, 1.0f);
 	public Vector3 largeStarSize = new Vector3(1.5f, 1.5f, 1.5f);
+	public Vector3 dockStart;
 
+	// prefabs
+	public GameObject dockPrefab;
+	public GameObject starPrefab;
+	public GameObject connectionPrefab;
+
+	// general scene references
+	public Lamp lamp;
+	public Renderer soul;
+	public List<Loop> loopers;
+	public Boat boat;
+
+	// constellation stuff
 	private List<Star> starGraph;
 	private Star lastClickedStar;
 
+	// stuff to be cleaned up at reset
+	private List<Star> allStars;
+	public GameObject dock;
+
 	void Start ()
 	{
+		allStars = new List<Star>();
+		StartGame();
+	}
+
+	void Update ()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			ClearGame();
+			StartGame();
+		}
+	}
+
+	private void ClearGame ()
+	{
+		foreach (Star star in allStars)
+		{
+			Destroy(star.gameObject);
+		}
+		allStars = new List<Star>();
+
+		starGraph = new List<Star>();
+		lastClickedStar = null;
+
+		if (dock)
+			Destroy(dock);
+
+		boat.Reset();
+		lamp.Reset();
+
+		foreach (Loop looper in loopers)
+		{
+			looper.Reset();
+		}
+	}
+
+	private void StartGame ()
+	{
+		// set goal color
 		Color color = new Color(Random.value, Random.value, Random.value);
 		goalColor = color;
 		soul.material.SetColor("_Color", goalColor);
+
+		// create star selection
+		for (int i = 0; i < numStars; i++)
+		{
+			color = new Color(Random.value, Random.value, Random.value);
+			float x = Random.Range(minStarLoc.x, maxStarLoc.x);
+			float y = Random.Range(minStarLoc.y, maxStarLoc.y);
+			
+			GameObject starObj = Instantiate(starPrefab, new Vector3(x, y, 0), Quaternion.identity);
+			Star star = starObj.GetComponent<Star>();
+			star.GameController = this;
+			star.SetColor(color);
+			allStars.Add(star);
+		}
 	}
 
 	public void AddStar (Star star)
@@ -84,7 +148,7 @@ public class GameController : MonoBehaviour {
 
 	private void ColorSuccess ()
 	{
-		GameObject dock = Instantiate(dockPrefab, dockStart, Quaternion.identity) as GameObject;
+		dock = Instantiate(dockPrefab, dockStart, Quaternion.identity) as GameObject;
 
 		foreach (Loop loop in loopers)
 			loop.Slow();

@@ -19,6 +19,11 @@ public class Star : MonoBehaviour {
 	void Start()
 	{
 		connections = new List<Connection>();
+	}
+
+	public void SetColor (Color c)
+	{
+		color = c;
 		GetComponent<Renderer>().material.SetColor("_Color", color);
 	}
 

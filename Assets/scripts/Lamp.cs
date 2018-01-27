@@ -11,8 +11,7 @@ public class Lamp : MonoBehaviour {
 
 	void Start ()
 	{
-		colors = new List<Color>();
-		rend.material.SetColor("_Color", defaultColor);
+		Reset();
 	}
 
 	public void AddColor (Color color)
@@ -29,13 +28,26 @@ public class Lamp : MonoBehaviour {
 
 	private void RecalculateColor ()
 	{
-		Color avgColor = new Color(0,0,0,0);
-		foreach(Color c in colors)
-			avgColor += c;
-		avgColor = avgColor / colors.Count;
+		if (colors.Count > 0)
+		{
+			Color avgColor = new Color(0,0,0,0);
+			foreach(Color c in colors)
+				avgColor += c;
+			avgColor = avgColor / colors.Count;
 
-		rend.material.SetColor("_Color", avgColor);
-		color = avgColor;
+			rend.material.SetColor("_Color", avgColor);
+			color = avgColor;
+		}
+		else
+		{
+			Reset();
+		}
+	}
+
+	public void Reset ()
+	{
+		colors = new List<Color>();
+		rend.material.SetColor("_Color", defaultColor);
 	}
 	
 }

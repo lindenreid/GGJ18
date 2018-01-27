@@ -6,6 +6,7 @@ public class Boat : MonoBehaviour {
 
 	public GameController GameController;
 
+	public Vector3 startPos;
 	public float speed = 1.0f;
 	public float acceleration = 0.01f;
 	public bool moving;
@@ -32,6 +33,12 @@ public class Boat : MonoBehaviour {
 	public void Move ()
 	{
 		moving = true;
+	}
+
+	public void Reset ()
+	{
+		moving = false;
+		transform.position = startPos;
 	}
 
 }
