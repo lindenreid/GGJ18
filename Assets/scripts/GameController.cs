@@ -267,8 +267,6 @@ public class GameController : MonoBehaviour {
 			star.PlayDissolveAnim();
 		}
 
-		lamp.Reset();
-
 		newPassenger = Instantiate(passengerPrefab, passengerStart, Quaternion.identity) as GameObject;
 		newPassenger.transform.SetParent(dock.transform, false);
 	}
