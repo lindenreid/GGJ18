@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour {
 	public GameObject connectionPrefab;
 
 	// general scene references
+	public GameObject titleScreen;
 	public PlayAnimation reaperAnim;
 	public Passenger passenger;
 	public GameObject newPassenger;
@@ -57,7 +58,6 @@ public class GameController : MonoBehaviour {
 	void Start ()
 	{
 		allStars = new List<Star>();
-		StartGame();
 	}
 
 	void Update ()
@@ -136,6 +136,7 @@ public class GameController : MonoBehaviour {
 		// set average to goal color
 		goalColor = avgColor;
 		soul.material.SetColor("_Color", avgColor);
+		passenger.SetColor(avgColor);
 
 		gameplay = true;
 	}
@@ -180,6 +181,13 @@ public class GameController : MonoBehaviour {
 	public void Exit ()
 	{
 		Application.Quit();
+	}
+
+	public void StartButton () 
+	{
+		titleScreen.SetActive(false);
+		ClearGame();
+		StartGame();
 	}
 
 	public void AddStar (Star star)

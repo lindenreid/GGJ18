@@ -56,6 +56,12 @@ public class Passenger : MonoBehaviour {
 		}
 	}
 
+	public void SetColor (Color color)
+	{
+		float a = rend.material.GetColor("_Color").a;
+		rend.material.SetColor("_Color", new Color(color.r, color.g, color.b, a));
+	}
+
 	public void PlayDissolveAnim ()
 	{
 		if (!rend)
