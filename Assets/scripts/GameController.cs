@@ -17,17 +17,22 @@ public class GameController : MonoBehaviour {
 	public Vector3 minStarLoc;
 	public Vector3 smallStarSize = new Vector3(1.0f, 1.0f, 1.0f);
 	public Vector3 largeStarSize = new Vector3(1.5f, 1.5f, 1.5f);
+	public Vector3 passengerStart;
 	public Vector3 dockStart;
 	public float dockFinish;
 	public int minColors = 2;
 	public int maxColors = 5;
+	public Vector3 passengerOnBoatPos;
 
 	// prefabs
 	public GameObject dockPrefab;
+	public GameObject passengerPrefab;
 	public GameObject starPrefab;
 	public GameObject connectionPrefab;
 
 	// general scene references
+	public Passenger passenger;
+	public GameObject newPassenger;
 	public Lamp lamp;
 	public Renderer soul;
 	public List<Loop> loopers;
@@ -64,6 +69,10 @@ public class GameController : MonoBehaviour {
 		{
 			Pause();
 		}
+		else if (Input.GetKeyDown(KeyCode.Tab))
+		{
+			ColorSuccess();
+		}
 	}
 
 	private void ClearGame ()
@@ -82,6 +91,7 @@ public class GameController : MonoBehaviour {
 
 		boat.Reset();
 		lamp.Reset();
+		passenger.Reset();
 
 		foreach (Loop looper in loopers)
 		{
@@ -191,10 +201,29 @@ public class GameController : MonoBehaviour {
 
 	public void DeckAnimFinished ()
 	{
+		Destroy(passenger.gameObject);
+		passenger = null;
+
 		foreach (Loop looper in loopers)
 		{
 			looper.Stop();
 		}
+
+		newPassenger.GetComponent<Passenger>().PlayDissolveAnim(this, true);
+	}
+
+	public void PassengerAnimFinished ()
+	{
+		// put passenger on boat
+		Destroy(newPassenger.gameObject);
+		newPassenger = null;
+		
+		GameObject po = Instantiate(passengerPrefab, passengerOnBoatPos, Quaternion.identity) as GameObject;
+		passenger = po.GetComponent<Passenger>();
+		passenger.transform.SetParent(boat.gameObject.transform);
+
+		ClearGame();
+		StartGame();
 	}
 
 	private void CheckColor ()
@@ -213,9 +242,15 @@ public class GameController : MonoBehaviour {
 
 	private void ColorSuccess ()
 	{
+		if (!gameplay) return;
+
 		dock = Instantiate(dockPrefab, dockStart, Quaternion.identity) as GameObject;
 		dock.GetComponent<Scroll>().Move(this, dockFinish);
+		passenger.PlayDissolveAnim(this, false);
 		gameplay = false;
+
+		newPassenger = Instantiate(passengerPrefab, passengerStart, Quaternion.identity) as GameObject;
+		newPassenger.transform.SetParent(dock.transform, false);
 	}
 
 }

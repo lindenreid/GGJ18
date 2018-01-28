@@ -44,7 +44,7 @@ Shader "Custom/SpriteLit"
         {
             fixed4 sprite = SampleSpriteTexture (input.uv_MainTex) * input.color;
             o.Albedo = sprite.rgb * sprite.a * _Color.rgb;
-            o.Alpha = sprite.a;
+            o.Alpha = sprite.a * _Color.a;
         }
         ENDCG
     }
