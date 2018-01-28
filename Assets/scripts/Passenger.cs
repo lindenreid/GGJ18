@@ -11,12 +11,12 @@ public class Passenger : MonoBehaviour {
 	private float dissolveRemaining;
 	private bool dissolve;
 	private bool alert;
-	private Renderer renderer;
+	private Renderer rend;
 	private GameController GameController;
 
 	void Start () 
 	{
-		renderer = GetComponent<Renderer>();
+		rend = GetComponent<Renderer>();
 	}
 
 	void Update ()
@@ -39,21 +39,23 @@ public class Passenger : MonoBehaviour {
 
 	public void PlayDissolveAnim (GameController controller, bool alert)
 	{
+		if (!rend)
+			rend = GetComponent<Renderer>();
 		dissolveRemaining = dissolveDuration;
 		dissolve = true;
-		renderer.material.SetInt("_Dissolve", 1);
-		renderer.material.SetFloat("_StartTime", Time.time);
+		rend.material.SetInt("_Dissolve", 1);
+		rend.material.SetFloat("_StartTime", Time.time);
 		GameController = controller;
 		this.alert = alert;
 	}
 
 	public void Reset ()
 	{
-		if (!renderer)
-			renderer = GetComponent<Renderer>();
+		if (!rend)
+			rend = GetComponent<Renderer>();
 		dissolve = false;
 		transform.localPosition = originalPos;
-		renderer.material.SetInt("_Dissolve", 0);
+		rend.material.SetInt("_Dissolve", 0);
 	}
 
 

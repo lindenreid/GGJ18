@@ -1454,6 +1454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 874862950}
   - component: {fileID: 874862951}
+  - component: {fileID: 874862952}
   m_Layer: 2
   m_Name: boatman
   m_TagString: Untagged
@@ -1468,8 +1469,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 874862949}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.6399841, y: 0.6200104, z: 0}
-  m_LocalScale: {x: 1.5004492, y: 1.5004492, z: 1.5004492}
+  m_LocalPosition: {x: 2.2, y: 1.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 847078124}
   m_RootOrder: 0
@@ -1508,7 +1509,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: eaed20ac39cb7e14f85611a5a81dd201, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4afeb0b7c783cd4ca5487465ff5bc9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1518,6 +1519,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
+--- !u!95 &874862952
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874862949}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bbebb0a364914c14592443110d5fbeed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &891119636
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,6 +2159,10 @@ Prefab:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1234232774843260, guid: 6b93fd970ceed4247aae6b5a1a610eac, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b93fd970ceed4247aae6b5a1a610eac, type: 2}
   m_IsPrefabParent: 0
@@ -2243,7 +2265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bbeea1d4bb97246aef8c5135a5753c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winMargin: 0.2
+  winMargin: 0.15
   numStars: 15
   maxStarLoc: {x: 7, y: 4, z: 0}
   minStarLoc: {x: -10, y: -1, z: 0}
@@ -2252,8 +2274,8 @@ MonoBehaviour:
   passengerStart: {x: 0.38, y: 2.2, z: 0}
   dockStart: {x: -16, y: -2.08, z: 0}
   dockFinish: -3.85
-  minColors: 2
-  maxColors: 4
+  minColors: 3
+  maxColors: 6
   passengerOnBoatPos: {x: -0.51, y: 0.37, z: 0}
   dockPrefab: {fileID: 1209687247317636, guid: 06cfe20cf8932d842b3925af9f362c11, type: 2}
   passengerPrefab: {fileID: 1234232774843260, guid: 6b93fd970ceed4247aae6b5a1a610eac,

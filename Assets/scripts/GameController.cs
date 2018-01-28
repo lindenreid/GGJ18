@@ -101,31 +101,40 @@ public class GameController : MonoBehaviour {
 
 	private void StartGame ()
 	{
-		// set goal color
-		Color color = new Color(Random.value, Random.value, Random.value);
-		goalColor = color;
-		soul.material.SetColor("_Color", goalColor);
+		// create remaining random colors
+		for (int i = 0; i < numStars; i++)
+		{
+			Color color = new Color(Random.value, Random.value, Random.value);
+			CreateStar(color);
+		}
 
-		// break up answer into n colors that add up to answer
+		// pick n random colors to create average
 		int n = (int)Mathf.Floor(Random.Range(minColors, maxColors + 1));
-		if (n % 2 != 0) n += 1;
-		float[] r = MathUtil.GenerateNumsThatAverageToVal(n, goalColor.r, 0, 1);
-		float[] g = MathUtil.GenerateNumsThatAverageToVal(n, goalColor.g, 0, 1);
-		float[] b = MathUtil.GenerateNumsThatAverageToVal(n, goalColor.b, 0, 1);
-
-		// create 'answer' colors
+		Debug.Log("num colors needed: " + n);
+		List<Color> colors = new List<Color>();
+		
 		for (int i = 0; i < n; i++)
 		{
-			color = new Color(r[i], g[i], b[i]);
-			CreateStar(color);
+			int j = (int)Mathf.Floor(Random.Range(0, allStars.Count));
+			Color c = allStars[j].color;
+			while (colors.Contains(c))
+			{
+				j = (int)Mathf.Floor(Random.Range(0, allStars.Count));
+				c = allStars[j].color;
+			}
+			colors.Add(c);
+			colors[i] = c;
 		}
 
-		// create remaining random colors
-		for (int i = 0; i < numStars - n; i++)
-		{
-			color = new Color(Random.value, Random.value, Random.value);
-			CreateStar(color);
-		}
+		// compute average of colors
+		Color avgColor = new Color(0,0,0,0);
+		foreach(Color c in colors)
+			avgColor += c;
+		avgColor = avgColor / n;
+
+		// set average to goal color
+		goalColor = avgColor;
+		soul.material.SetColor("_Color", avgColor);
 
 		gameplay = true;
 	}
