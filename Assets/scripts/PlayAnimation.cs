@@ -7,10 +7,11 @@ public class PlayAnimation : MonoBehaviour
 {
     public AnimationClip clip;
     PlayableGraph playableGraph;
+    public bool playAuto;
 
-    void Start()
+    void Start ()
     {
-        if (!playableGraph.IsValid()) Initialize();
+        if (playAuto) Play();
     }
 
     public void Play ()
@@ -41,6 +42,6 @@ public class PlayAnimation : MonoBehaviour
 
     void OnDisable()
     {
-        playableGraph.Destroy();
+        if (playableGraph.IsValid()) playableGraph.Destroy();
     }
 }

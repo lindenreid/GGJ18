@@ -1455,6 +1455,7 @@ GameObject:
   - component: {fileID: 874862950}
   - component: {fileID: 874862951}
   - component: {fileID: 874862952}
+  - component: {fileID: 874862953}
   m_Layer: 2
   m_Name: boatman
   m_TagString: Untagged
@@ -1508,13 +1509,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: b4afeb0b7c783cd4ca5487465ff5bc9e, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: a788b9e5a89649641994daaa6d11224d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.72, y: 2.79}
+  m_Size: {x: 3.7500002, y: 5.0000005}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1526,9 +1527,9 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 874862949}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bbebb0a364914c14592443110d5fbeed, type: 2}
+  m_Controller: {fileID: 9100000, guid: daa4db55220697947835ade5645e4a96, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1536,6 +1537,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &874862953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874862949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da8ba1f8b130834fbdb48a883c58d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 7400000, guid: d3b388b5643411d48bd041f781c37360, type: 2}
+  playAuto: 0
 --- !u!1 &891119636
 GameObject:
   m_ObjectHideFlags: 0
