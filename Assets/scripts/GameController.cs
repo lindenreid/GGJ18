@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour {
 	public GameObject connectionPrefab;
 
 	// general scene references
+	public PlayAnimation reaperAnim;
 	public Passenger passenger;
 	public GameObject newPassenger;
 	public Lamp lamp;
@@ -110,7 +111,6 @@ public class GameController : MonoBehaviour {
 
 		// pick n random colors to create average
 		int n = (int)Mathf.Floor(Random.Range(minColors, maxColors + 1));
-		Debug.Log("num colors needed: " + n);
 		List<Color> colors = new List<Color>();
 		
 		for (int i = 0; i < n; i++)
@@ -194,6 +194,7 @@ public class GameController : MonoBehaviour {
 		 */
 
 		lamp.AddColor(star.color);
+		reaperAnim.Play(false);
 		CheckColor();
 	}
 
@@ -207,6 +208,7 @@ public class GameController : MonoBehaviour {
 		// TODO: connection stuff
 
 		lamp.RemoveColor(star.color);
+		reaperAnim.Play(false);
 		CheckColor();
 	}
 
@@ -259,6 +261,13 @@ public class GameController : MonoBehaviour {
 		dock.GetComponent<Scroll>().Move(this, dockFinish);
 		passenger.PlayDissolveAnim(this, false);
 		gameplay = false;
+
+		foreach (Star star in allStars)
+		{
+			star.PlayDissolveAnim();
+		}
+
+		lamp.Reset();
 
 		newPassenger = Instantiate(passengerPrefab, passengerStart, Quaternion.identity) as GameObject;
 		newPassenger.transform.SetParent(dock.transform, false);

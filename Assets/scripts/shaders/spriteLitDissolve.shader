@@ -28,7 +28,7 @@
         Cull Off
         Lighting Off
 		ZWrite Off
-        Blend One OneMinusSrcAlpha
+        Blend SrcAlpha OneMinusSrcAlpha
 
         CGPROGRAM
         #pragma surface surf Lambert vertex:vert nofog nolightmap nodynlightmap keepalpha noinstancing
@@ -84,7 +84,7 @@
 				clip(noiseSample - threshold);
 
 				albedo = color.rgb * _Color.rgb;
-				alpha = color.a * _Color.a;
+				alpha = _Color.a * sprite.a;
 			}
 			else
 			{

@@ -8,6 +8,7 @@ public class Star : MonoBehaviour {
 	public GameController GameController;
 	public Color color = new Color(1,1,1,1);
 	public List<AnimationClip> animations;
+	private Renderer rend;
 
 	public class Connection {
 		public Star next;
@@ -22,6 +23,7 @@ public class Star : MonoBehaviour {
 	void Start ()
 	{
 		connections = new List<Connection>();
+		rend = GetComponent<Renderer>();
 	}
 
 	public void SetColor (Color c)
@@ -36,7 +38,7 @@ public class Star : MonoBehaviour {
 		AnimationClip clip = animations[i];
 
 		PlayAnimation anim = GetComponent<PlayAnimation>();
-		anim.PlayClip(clip);
+		anim.PlayClip(clip, true);
 	}
 
 	void OnMouseDown ()
@@ -45,6 +47,12 @@ public class Star : MonoBehaviour {
 			GameController.RemoveStar(this);
 		else 
 			GameController.AddStar(this);
+	}
+
+	public void PlayDissolveAnim ()
+	{
+		rend.material.SetInt("_Dissolve", 1);
+		rend.material.SetFloat("_StartTime", Time.time);
 	}
 
 	public void AddConnection(Star next, Connector c)

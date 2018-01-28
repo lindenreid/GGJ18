@@ -1509,7 +1509,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: a788b9e5a89649641994daaa6d11224d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2148,6 +2148,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212115848448420966, guid: 6b93fd970ceed4247aae6b5a1a610eac,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b93fd970ceed4247aae6b5a1a610eac, type: 2}
   m_IsPrefabParent: 0
@@ -2252,8 +2257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winMargin: 0.15
   numStars: 15
-  maxStarLoc: {x: 7, y: 4, z: 0}
-  minStarLoc: {x: -10, y: -1, z: 0}
+  maxStarLoc: {x: 5.39, y: 3.86, z: 0}
+  minStarLoc: {x: -8.19, y: -2.6, z: 0}
   smallStarSize: {x: 1.5, y: 1.5, z: 1.5}
   largeStarSize: {x: 2, y: 2, z: 2}
   passengerStart: {x: 0.38, y: 1.94, z: 0}
@@ -2268,6 +2273,7 @@ MonoBehaviour:
   starPrefab: {fileID: 1731402374929400, guid: a83fcff8ccb41cb4f829a6ae1bd91622, type: 2}
   connectionPrefab: {fileID: 1970691909755492, guid: 998623060161a67468dbdb90e0f9d4c4,
     type: 2}
+  reaperAnim: {fileID: 874862953}
   passenger: {fileID: 1235012783}
   newPassenger: {fileID: 0}
   lamp: {fileID: 669287663}

@@ -11,24 +11,23 @@ public class PlayAnimation : MonoBehaviour
 
     void Start ()
     {
-        if (playAuto) Play();
+        if (playAuto) Play(false);
     }
 
-    public void Play ()
+    public void Play (bool randomStart)
     {
-        if (!playableGraph.IsValid()) Initialize();
+        Initialize(randomStart);
         playableGraph.Play();
     }
 
-    public void PlayClip(AnimationClip c)
+    public void PlayClip(AnimationClip c, bool randomStart)
     {
         if (playableGraph.IsValid()) playableGraph.Destroy();
         clip = c;
-        Initialize();
-        Play();
+        Play(randomStart);
     }
 
-    private void Initialize ()
+    private void Initialize (bool randomStart)
     {
         playableGraph = PlayableGraph.Create();
         playableGraph.SetTimeUpdateMode(DirectorUpdateMode.GameTime);
@@ -36,7 +35,10 @@ public class PlayAnimation : MonoBehaviour
         var playableOutput = AnimationPlayableOutput.Create(playableGraph, "Animation", animator);
 
         var clipPlayable = AnimationClipPlayable.Create(playableGraph, clip);
-        clipPlayable.SetTime(Random.Range(0.0f, 1.0f));
+        if (randomStart) 
+            clipPlayable.SetTime(Random.Range(0.0f, 1.0f));
+        else 
+            clipPlayable.SetTime(0.0f);
         playableOutput.SetSourcePlayable(clipPlayable);
     }
 
