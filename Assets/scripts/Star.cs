@@ -1,12 +1,13 @@
-﻿using UnityEngine;
-using UnityEditor.Animations;
+﻿using UnityEngine; 
 using System.Collections.Generic;
+using UnityEngine.Playables;
+using UnityEngine.Animations;
 
 public class Star : MonoBehaviour {
 
 	public GameController GameController;
 	public Color color = new Color(1,1,1,1);
-	public List<AnimatorController> animations;
+	public List<AnimationClip> animations;
 
 	public class Connection {
 		public Star next;
@@ -21,19 +22,21 @@ public class Star : MonoBehaviour {
 	void Start ()
 	{
 		connections = new List<Connection>();
-
-		int n = (int)Mathf.Floor(Random.Range(1, animations.Count));
-		Animator anim = GetComponent<Animator>();
-		anim.runtimeAnimatorController = animations[n];
-		AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo(0);
-		anim.Play(state.fullPathHash, -1, Random.value);
-		//anim.speed *= Random.value;
 	}
 
 	public void SetColor (Color c)
 	{
 		color = c;
 		GetComponent<Renderer>().material.SetColor("_Color", color);
+	}
+
+	public void AnimateRandom ()
+	{
+		int i = (int)Mathf.Floor(Random.Range(0, animations.Count));
+		AnimationClip clip = animations[i];
+
+		PlayAnimation anim = GetComponent<PlayAnimation>();
+		anim.PlayClip(clip);
 	}
 
 	void OnMouseDown ()

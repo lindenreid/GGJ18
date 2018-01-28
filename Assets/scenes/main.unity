@@ -2280,7 +2280,7 @@ MonoBehaviour:
   dockPrefab: {fileID: 1209687247317636, guid: 06cfe20cf8932d842b3925af9f362c11, type: 2}
   passengerPrefab: {fileID: 1234232774843260, guid: 6b93fd970ceed4247aae6b5a1a610eac,
     type: 2}
-  starPrefab: {fileID: 1035117537523794, guid: 446ea5e35f07b9542adff7351ef7e72f, type: 2}
+  starPrefab: {fileID: 1731402374929400, guid: a83fcff8ccb41cb4f829a6ae1bd91622, type: 2}
   connectionPrefab: {fileID: 1970691909755492, guid: 998623060161a67468dbdb90e0f9d4c4,
     type: 2}
   passenger: {fileID: 1235012783}
@@ -2805,7 +2805,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1247721613
+  randomSeed: -2048199059
   InitialModule:
     serializedVersion: 3
     enabled: 1

@@ -145,9 +145,11 @@ public class GameController : MonoBehaviour {
 		float y = Random.Range(minStarLoc.y, maxStarLoc.y);
 
 		GameObject starObj = Instantiate(starPrefab, new Vector3(x, y, 0), Quaternion.identity);
-		Star star = starObj.GetComponent<Star>();
 
+		Star star = starObj.GetComponent<Star>();
+		
 		star.GameController = this;
+		star.AnimateRandom();
 		star.SetColor(color);
 		allStars.Add(star);
 	}
