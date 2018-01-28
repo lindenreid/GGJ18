@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour {
 	public List<Loop> loopers;
 	public List<Float> floaters;
 	public Boat boat;
+	public Subtitles subtitles;
 
 	// UI references
 	public GameObject PauseMenu;
@@ -187,6 +188,12 @@ public class GameController : MonoBehaviour {
 	{
 		titleScreen.SetActive(false);
 		ClearGame();
+		subtitles.gameObject.SetActive(true);
+		subtitles.PlaySubtitles();
+	}
+
+	public void SubtitlesDone ()
+	{
 		StartGame();
 	}
 
