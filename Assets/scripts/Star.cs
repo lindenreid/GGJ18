@@ -8,6 +8,7 @@ public class Star : MonoBehaviour {
 	public GameController GameController;
 	public Color color = new Color(1,1,1,1);
 	public List<AnimationClip> animations;
+	public GameObject circle;
 	private Renderer rend;
 
 	public class Connection {
@@ -51,6 +52,7 @@ public class Star : MonoBehaviour {
 
 	public void PlayDissolveAnim ()
 	{
+		circle.SetActive(false);
 		rend.material.SetInt("_Dissolve", 1);
 		rend.material.SetFloat("_StartTime", Time.time);
 	}
@@ -64,6 +66,7 @@ public class Star : MonoBehaviour {
 	{
 		this.selected = selected;
 		transform.localScale = size;
+		circle.SetActive(selected);
 	}
 
 }
