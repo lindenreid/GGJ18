@@ -1817,6 +1817,8 @@ GameObject:
   - component: {fileID: 847078123}
   - component: {fileID: 847078125}
   - component: {fileID: 847078126}
+  - component: {fileID: 847078128}
+  - component: {fileID: 847078127}
   m_Layer: 2
   m_Name: boat
   m_TagString: Player
@@ -1858,9 +1860,9 @@ SpriteRenderer:
   m_SortingLayerID: -1801868785
   m_SortingLayer: 1
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 3af76528b64b89f42b4aa8c3b76a1577, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 901187361e6a54f429505fbaf659cc97, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.99, y: 2.41}
@@ -1914,6 +1916,36 @@ MonoBehaviour:
   AnimSpeed: 2
   AnimAmp: 0.005
   randomSpeed: 0
+--- !u!114 &847078127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847078122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da8ba1f8b130834fbdb48a883c58d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 7400000, guid: 2f5a9369c2be58b4ebecc96d2b88ea56, type: 2}
+  playAuto: 1
+--- !u!95 &847078128
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847078122}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56c08ffb3f72d934ca9773bba0fd91fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &874862949
 GameObject:
   m_ObjectHideFlags: 0

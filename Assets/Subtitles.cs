@@ -54,7 +54,6 @@ public class Subtitles : MonoBehaviour {
 	{
 		fade = false;
 		currentTitle += 1;
-		Debug.Log("title:" + currentTitle);
 		if (currentTitle < subtitles.Count)
 		{
 			text.text = subtitles[currentTitle];
