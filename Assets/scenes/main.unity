@@ -750,8 +750,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 1.2
   dec: 0.005
-  loopPos: {x: -27.36, y: 0, z: 0}
-  maxPosX: 20
+  loopPos: {x: -24.36, y: 0, z: 0}
+  maxPosX: 23.71
 --- !u!1 &567416270
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,10 +911,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89e8b962d467df448717c9f93324365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 0.5
+  startSpeed: 5
   dec: 0.0125
-  loopPos: {x: -74.57, y: 0, z: 0}
-  maxPosX: 20
+  loopPos: {x: -70, y: 0, z: 0}
+  maxPosX: 23.71
 --- !u!1 &613122566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,8 +1123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 1.2
   dec: 0.005
-  loopPos: {x: -27.36, y: 0, z: 0}
-  maxPosX: 20
+  loopPos: {x: -24.36, y: 0, z: 0}
+  maxPosX: 23.71
 --- !u!1 &702811347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,8 +1456,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 2
   dec: 0.005
-  loopPos: {x: -27.36, y: 0, z: 0}
-  maxPosX: 20
+  loopPos: {x: -24.36, y: 0, z: 0}
+  maxPosX: 23.71
 --- !u!1 &796976830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,8 +1610,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 0.2
   dec: 0.005
-  loopPos: {x: -27.36, y: 0, z: 0}
-  maxPosX: 20
+  loopPos: {x: -24.36, y: 0, z: 0}
+  maxPosX: 23.71
 --- !u!1 &847078122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,10 +2011,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89e8b962d467df448717c9f93324365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 0.5
+  startSpeed: 5
   dec: 0.0125
-  loopPos: {x: -74.57, y: 0, z: 0}
-  maxPosX: 20
+  loopPos: {x: -70, y: 0, z: 0}
+  maxPosX: 23.71
 --- !u!1 &1034926120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,7 +2065,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6366c49ff25ced64eadeef36a5c0169c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2100,10 +2100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89e8b962d467df448717c9f93324365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 0.5
+  startSpeed: 5
   dec: 0.0125
-  loopPos: {x: -74.57, y: 0, z: 0}
-  maxPosX: 20
+  loopPos: {x: -70, y: 0, z: 0}
+  maxPosX: 23.71
 --- !u!1 &1037877859
 GameObject:
   m_ObjectHideFlags: 0
@@ -2804,8 +2804,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 2
   dec: 0.005
-  loopPos: {x: -27.36, y: 0, z: 0}
-  maxPosX: 20
+  loopPos: {x: -24.36, y: 0, z: 0}
+  maxPosX: 23.71
 --- !u!1 &1720024315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2891,10 +2891,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89e8b962d467df448717c9f93324365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 0.5
+  startSpeed: 5
   dec: 0.0125
-  loopPos: {x: -74.57, y: 0, z: 0}
-  maxPosX: 20
+  loopPos: {x: -70, y: 0, z: 0}
+  maxPosX: 23.71
 --- !u!1 &1791766088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,8 +2955,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 0.2
   dec: 0.005
-  loopPos: {x: -27.36, y: 0, z: 0}
-  maxPosX: 20
+  loopPos: {x: -24.36, y: 0, z: 0}
+  maxPosX: 23.71
 --- !u!212 &1910943982
 SpriteRenderer:
   m_ObjectHideFlags: 0

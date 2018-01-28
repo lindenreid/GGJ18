@@ -16,9 +16,9 @@ public class Loop : MonoBehaviour {
 	void Update () {
         transform.Translate(Vector3.right * speed * Time.deltaTime);
         
-        if(transform.position.x >= maxPosX)
+        if(transform.localPosition.x >= maxPosX)
         {
-            transform.position = new Vector3(loopPos.x, transform.position.y, 0);
+            transform.localPosition = new Vector3(loopPos.x, transform.localPosition.y, 0);
         }
     }
 
