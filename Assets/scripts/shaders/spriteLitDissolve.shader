@@ -27,10 +27,11 @@
 
         Cull Off
         Lighting Off
-        Blend SrcAlpha OneMinusSrcAlpha
+		ZWrite Off
+        Blend One OneMinusSrcAlpha
 
         CGPROGRAM
-        #pragma surface surf Lambert vertex:vert nofog nolightmap nodynlightmap noinstancing
+        #pragma surface surf Lambert vertex:vert nofog nolightmap nodynlightmap keepalpha noinstancing
         #include "UnitySprites.cginc"
 
 		// Properties

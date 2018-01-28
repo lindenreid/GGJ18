@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4519839764997704}
   - component: {fileID: 212115848448420966}
   - component: {fileID: 114700398346322404}
+  - component: {fileID: 95246809091116556}
+  - component: {fileID: 114425484378985186}
   m_Layer: 2
   m_Name: passenger
   m_TagString: Untagged
@@ -35,12 +37,42 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1234232774843260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.51000977, y: -0.05999756, z: 0}
-  m_LocalScale: {x: 1.7634677, y: 1.7634677, z: 1.7634677}
+  m_LocalPosition: {x: -0.96, y: 0.47, z: 0}
+  m_LocalScale: {x: 1.055332, y: 1.055332, z: 1.055332}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95246809091116556
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234232774843260}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c099765d63059748aee0f57972e0356, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114425484378985186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234232774843260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da8ba1f8b130834fbdb48a883c58d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 7400000, guid: 9bc112834ca1fa546a11115c55d51fa4, type: 2}
+  playAuto: 0
 --- !u!114 &114700398346322404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ae7967dc885214eb9fedef35200dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalPos: {x: -0.5100098, y: 0.37, z: 0}
+  originalPos: {x: -0.96, y: 0.47, z: 0}
   floatUpSpeed: 2
   dissolveDuration: 2
   fadeDuration: 1
@@ -90,7 +122,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 26e394ab7cdcce84aba9504fef5ef9bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fe2aa5832efb0b49aef794d1c0eb131, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

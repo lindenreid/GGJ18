@@ -38,7 +38,6 @@ public class Boat : MonoBehaviour {
 	public void Reset ()
 	{
 		moving = false;
-		transform.position = startPos;
 	}
 
 }
