@@ -329,7 +329,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 11dbe48a5fe4fb242b7db0e836d22a8e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84438bff0e9bb434f9a834af80fd8600, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -346,8 +346,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 366517773}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.87, y: 4.03, z: -2.0778608}
-  m_LocalScale: {x: 1.4980673, y: 1.4980673, z: 1.4980673}
+  m_LocalPosition: {x: 6.45, y: 3.83, z: -2.0778608}
+  m_LocalScale: {x: 0.77360874, y: 0.77360874, z: 0.77360874}
   m_Children: []
   m_Father: {fileID: 891119637}
   m_RootOrder: 1
@@ -437,6 +437,7 @@ GameObject:
   - component: {fileID: 461251175}
   - component: {fileID: 461251179}
   - component: {fileID: 461251176}
+  - component: {fileID: 461251180}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -550,6 +551,86 @@ MonoBehaviour:
   blurAndFlaresShader: {fileID: 4800000, guid: be6e39cf196f146d5be72fbefb18ed75, type: 3}
   brightPassFilterShader: {fileID: 4800000, guid: 0aeaa4cb29f5d4e9c8455f04c8575c8c,
     type: 3}
+--- !u!82 &461251180
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 461251174}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e6d0132ef31f64d42ba84654dffb50a0, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &474893306
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +998,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: e5596d7bd83613544a3626aa0640d6a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 80159d68fe70b894981ef8cb65e32252, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -934,8 +1015,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 669287660}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.93, y: 3.94, z: -2.0778608}
-  m_LocalScale: {x: 2.5241306, y: 2.5241306, z: 2.5241306}
+  m_LocalPosition: {x: -12.01, y: 3.85, z: -2.0778608}
+  m_LocalScale: {x: 1.5943179, y: 1.5943179, z: 1.5943179}
   m_Children: []
   m_Father: {fileID: 891119637}
   m_RootOrder: 0
@@ -1351,7 +1432,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 29be3520d4217bf4ba696db265c89261, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1582,7 +1663,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 3af76528b64b89f42b4aa8c3b76a1577, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -1703,7 +1784,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: a788b9e5a89649641994daaa6d11224d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2315,11 +2396,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4519839764997704, guid: 6b93fd970ceed4247aae6b5a1a610eac, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.96
+      value: -0.95999146
       objectReference: {fileID: 0}
     - target: {fileID: 4519839764997704, guid: 6b93fd970ceed4247aae6b5a1a610eac, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.47
+      value: 0.47000122
       objectReference: {fileID: 0}
     - target: {fileID: 4519839764997704, guid: 6b93fd970ceed4247aae6b5a1a610eac, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2344,11 +2425,6 @@ Prefab:
     - target: {fileID: 4519839764997704, guid: 6b93fd970ceed4247aae6b5a1a610eac, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212115848448420966, guid: 6b93fd970ceed4247aae6b5a1a610eac,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b93fd970ceed4247aae6b5a1a610eac, type: 2}
@@ -2458,9 +2534,9 @@ MonoBehaviour:
   minStarLoc: {x: -10.47, y: -2.17, z: 0}
   smallStarSize: {x: 1.5, y: 1.5, z: 1.5}
   largeStarSize: {x: 2, y: 2, z: 2}
-  passengerStart: {x: 0.38, y: 1.94, z: 0}
-  dockStart: {x: -16, y: -2.08, z: 0}
-  dockFinish: -3.85
+  passengerStart: {x: -0.64, y: 1.89, z: 0}
+  dockStart: {x: -16.3, y: -2.69, z: 0}
+  dockFinish: 4.95
   minColors: 3
   maxColors: 6
   passengerOnBoatPos: {x: -0.51, y: 0.37, z: 0}
@@ -2691,7 +2767,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 29be3520d4217bf4ba696db265c89261, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3629,7 +3705,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2

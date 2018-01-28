@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1234232774843260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.96, y: 0.47, z: 0}
+  m_LocalPosition: {x: 2.4900208, y: -2.8099976, z: 0}
   m_LocalScale: {x: 1.055332, y: 1.055332, z: 1.055332}
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,6 +88,10 @@ MonoBehaviour:
   floatUpSpeed: 2
   dissolveDuration: 2
   fadeDuration: 1
+  boardYPos: 1.57
+  boardDest: {x: 2.490021, y: -2.809998, z: 0}
+  boardingSpeed: 2
+  boardingAnim: {fileID: 7400000, guid: 8985773bcaa833742aeb275e5afeb2bd, type: 2}
 --- !u!212 &212115848448420966
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -121,7 +125,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 5fe2aa5832efb0b49aef794d1c0eb131, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

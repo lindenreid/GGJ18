@@ -5,6 +5,8 @@ using UnityEngine;
 public class Scroll : MonoBehaviour {
 
 	public float speed = 1.0f;
+	public float destroyX;
+	private bool destroy = false;
 	private bool move = false;
 	private float destX;
 	private GameController GameController;
@@ -14,11 +16,14 @@ public class Scroll : MonoBehaviour {
 		if (move)
 		{
 			transform.Translate(Vector3.right * speed * Time.deltaTime);
-
-			if (transform.position.x >= destX)
+			if (!destroy && transform.position.x >= destX)
 			{
 				GameController.DeckAnimFinished();
 				move = false;
+			}
+			else if (destroy && transform.position.x >= destroyX)
+			{
+				Destroy(this.gameObject);
 			}
 		}
 	}
@@ -28,5 +33,11 @@ public class Scroll : MonoBehaviour {
 		move = true;
 		GameController = gc;
 		destX = dest;
+	}
+
+	public void MoveToDestroy ()
+	{
+		move = true;
+		destroy = true;
 	}
 }

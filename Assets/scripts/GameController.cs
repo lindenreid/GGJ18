@@ -89,7 +89,7 @@ public class GameController : MonoBehaviour {
 		lastClickedStar = null;
 
 		if (dock)
-			Destroy(dock);
+			dock.GetComponent<Scroll>().MoveToDestroy();
 
 		boat.Reset();
 		lamp.Reset();
@@ -234,10 +234,10 @@ public class GameController : MonoBehaviour {
 			looper.Stop();
 		}
 
-		newPassenger.GetComponent<Passenger>().PlayDissolveAnim(this, true);
+		newPassenger.GetComponent<Passenger>().PlayBoardingAnim(this);
 	}
 
-	public void PassengerAnimFinished ()
+	public void PassengerBoardingFinished ()
 	{
 		// put passenger on boat
 		Destroy(newPassenger.gameObject);
@@ -271,7 +271,7 @@ public class GameController : MonoBehaviour {
 
 		dock = Instantiate(dockPrefab, dockStart, Quaternion.identity) as GameObject;
 		dock.GetComponent<Scroll>().Move(this, dockFinish);
-		passenger.PlayDissolveAnim(this, false);
+		passenger.PlayDissolveAnim();
 		gameplay = false;
 
 		foreach (Star star in allStars)
