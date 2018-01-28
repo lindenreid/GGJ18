@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour {
 	public Lamp lamp;
 	public Renderer soul;
 	public List<Loop> loopers;
+	public List<Float> floaters;
 	public Boat boat;
 
 	// UI references
@@ -152,6 +153,8 @@ public class GameController : MonoBehaviour {
 		star.AnimateRandom();
 		star.SetColor(color);
 		allStars.Add(star);
+
+		floaters.Add(star.GetComponent<Float>());
 	}
 
 	public void Pause ()
@@ -161,13 +164,22 @@ public class GameController : MonoBehaviour {
 			gameplay = false;
 			Time.timeScale = 0;
 			PauseMenu.SetActive(true);
+			foreach (Float f in floaters)
+				f.Pause(true);
 		}
 		else
 		{
 			gameplay = true;
 			Time.timeScale = 1;
 			PauseMenu.SetActive(false);
+			foreach (Float f in floaters)
+				f.Pause(false);
 		}
+	}
+
+	public void Exit ()
+	{
+		Application.Quit();
 	}
 
 	public void AddStar (Star star)
