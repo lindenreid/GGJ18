@@ -18,7 +18,7 @@ public class Loop : MonoBehaviour {
         
         if(transform.localPosition.x >= maxPosX)
         {
-            transform.localPosition = new Vector3(loopPos.x, transform.localPosition.y, 0);
+            transform.localPosition = new Vector3(loopPos.x, transform.localPosition.y, transform.localPosition.z);
         }
     }
 
