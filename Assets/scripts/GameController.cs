@@ -63,18 +63,9 @@ public class GameController : MonoBehaviour {
 
 	void Update ()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			ClearGame();
-			StartGame();
-		}
-		else if (Input.GetKeyDown(KeyCode.Escape))
+		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			Pause();
-		}
-		else if (Input.GetKeyDown(KeyCode.Tab))
-		{
-			ColorSuccess();
 		}
 	}
 

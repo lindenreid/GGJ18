@@ -6,6 +6,7 @@ using UnityEngine.Animations;
 public class Star : MonoBehaviour {
 
 	public GameController GameController;
+	public AudioSource audioSource;
 	public Color color = new Color(1,1,1,1);
 	public List<AnimationClip> animations;
 	public GameObject circle;
@@ -25,6 +26,7 @@ public class Star : MonoBehaviour {
 	{
 		connections = new List<Connection>();
 		rend = GetComponent<Renderer>();
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	public void SetColor (Color c)
@@ -44,6 +46,7 @@ public class Star : MonoBehaviour {
 
 	void OnMouseDown ()
 	{
+		audioSource.Play();
 		if (selected)
 			GameController.RemoveStar(this);
 		else 
