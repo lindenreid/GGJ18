@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
  
 [ExecuteInEditMode]
 public class PostProcess : MonoBehaviour {
